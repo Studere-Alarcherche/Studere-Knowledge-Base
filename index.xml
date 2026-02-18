@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Quartz 4</title>
+      <link>https://quartz.jzhao.xyz</link>
+      <description>Last 10 notes on Quartz 4</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Tpl_IB</title>
+    <link>https://quartz.jzhao.xyz/Studere-Knowledge-Base/00_System/%F0%9F%93%82-Templates/Tpl_IB</link>
+    <guid>https://quartz.jzhao.xyz/Studere-Knowledge-Base/00_System/%F0%9F%93%82-Templates/Tpl_IB</guid>
+    <description><![CDATA[ 🧩 IB: {{title}} Context (The Void): [这里填写为了解决什么问题/填补什么空缺…] The Logic Chain (The Skeleton): Axiom (公理): [不可简化的第一性原理] Mechanism (机制): [推导过程/运作机制] Result (结论): [导出的必然结果] 📊 Structural Map (Mermaid): graph LR A[Axiom] --&gt; B(Mechanism) B --&gt; C{Result} 🖼️ The Warburg Interval (The Montage): Direct... ]]></description>
+    <pubDate>Wed, 18 Feb 2026 07:32:28 GMT</pubDate>
+  </item><item>
+    <title>Tpl_Engram</title>
+    <link>https://quartz.jzhao.xyz/Studere-Knowledge-Base/00_System/%F0%9F%93%82-Templates/Tpl_Engram</link>
+    <guid>https://quartz.jzhao.xyz/Studere-Knowledge-Base/00_System/%F0%9F%93%82-Templates/Tpl_Engram</guid>
+    <description><![CDATA[ 🌱 Engram: [Title of the Trace] The Trace (The Artifact): [The specific fact, quote, data point, or image description. ]]></description>
+    <pubDate>Wed, 18 Feb 2026 07:32:28 GMT</pubDate>
+  </item><item>
+    <title>2026-02-18</title>
+    <link>https://quartz.jzhao.xyz/Studere-Knowledge-Base/04_Journal/2026/1/2026-02-18</link>
+    <guid>https://quartz.jzhao.xyz/Studere-Knowledge-Base/04_Journal/2026/1/2026-02-18</guid>
+    <description><![CDATA[ 📅 2026-02-18 🧭 Navigation ⚔️ 打开战况面板 🕹️ System Boot (每日开机) 💧 Hydrate: 300ml 水 🧠 Sync: 昨晚锁定的今日 MVP → [ ] 执行！ 📥 The Stream (核心语流) 全天流水账：A/P/N + D/W/L/X 代码记录 🔐 密码本 (Legend) 时间: A=AM, P=PM, N=Night 类型: D=Deep Work (学习/资产), W=Work (搞钱), L=Life (生存), X=Waste (摸鱼) 示例: A9 D.听NotebookLM 60m &gt; 懂了Skel... ]]></description>
+    <pubDate>Wed, 18 Feb 2026 07:01:51 GMT</pubDate>
+  </item><item>
+    <title>普鲁斯特精读专用</title>
+    <link>https://quartz.jzhao.xyz/Studere-Knowledge-Base/99_Archive/100-Prompt-Zone/%E6%99%AE%E9%B2%81%E6%96%AF%E7%89%B9%E7%B2%BE%E8%AF%BB%E4%B8%93%E7%94%A8</link>
+    <guid>https://quartz.jzhao.xyz/Studere-Knowledge-Base/99_Archive/100-Prompt-Zone/%E6%99%AE%E9%B2%81%E6%96%AF%E7%89%B9%E7%B2%BE%E8%AF%BB%E4%B8%93%E7%94%A8</guid>
+    <description><![CDATA[ Lantern v7.6 · Close Reading System of Proust [Internal Use] This document is a generative system. Not all phases must be executed for every passage. ]]></description>
+    <pubDate>Tue, 17 Feb 2026 14:06:55 GMT</pubDate>
+  </item><item>
+    <title>2026-02-17</title>
+    <link>https://quartz.jzhao.xyz/Studere-Knowledge-Base/04_Journal/2026/1/2026-02-17</link>
+    <guid>https://quartz.jzhao.xyz/Studere-Knowledge-Base/04_Journal/2026/1/2026-02-17</guid>
+    <description><![CDATA[ 📅 2026-02-17 🧭 Navigation ⚔️ 打开战况面板 🕹️ System Boot (每日开机) 💧 Hydrate: 300ml 水 🧠 Sync: 昨晚锁定的今日 MVP → [ ] 执行！ 📥 The Stream (核心语流) 全天流水账：A/P/N + D/W/L/X 代码记录 🔐 密码本 (Legend) 时间: A=AM, P=PM, N=Night 类型: D=Deep Work (学习/资产), W=Work (搞钱), L=Life (生存), X=Waste (摸鱼) 示例: A9 D.听NotebookLM 60m &gt; 懂了Skel... ]]></description>
+    <pubDate>Tue, 17 Feb 2026 13:58:40 GMT</pubDate>
+  </item><item>
+    <title>逆向工程建构--反推</title>
+    <link>https://quartz.jzhao.xyz/Studere-Knowledge-Base/99_Archive/100-Prompt-Zone/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E5%BB%BA%E6%9E%84--%E5%8F%8D%E6%8E%A8</link>
+    <guid>https://quartz.jzhao.xyz/Studere-Knowledge-Base/99_Archive/100-Prompt-Zone/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E5%BB%BA%E6%9E%84--%E5%8F%8D%E6%8E%A8</guid>
+    <description><![CDATA[ Optimized &amp; Upgraded Prompt Role &amp; Mission You are my Chief Cognitive Architect and Reverse-Engineering Specialist. ]]></description>
+    <pubDate>Tue, 17 Feb 2026 11:41:40 GMT</pubDate>
+  </item><item>
+    <title>布拉德雷四重奏</title>
+    <link>https://quartz.jzhao.xyz/Studere-Knowledge-Base/%E5%B8%83%E6%8B%89%E5%BE%B7%E9%9B%B7%E5%9B%9B%E9%87%8D%E5%A5%8F</link>
+    <guid>https://quartz.jzhao.xyz/Studere-Knowledge-Base/%E5%B8%83%E6%8B%89%E5%BE%B7%E9%9B%B7%E5%9B%9B%E9%87%8D%E5%A5%8F</guid>
+    <description><![CDATA[ Lantern v11.0 Strict Node Cycle + Multi-Genre Analysis 0. ]]></description>
+    <pubDate>Mon, 16 Feb 2026 04:55:27 GMT</pubDate>
+  </item><item>
+    <title>2026-02-16</title>
+    <link>https://quartz.jzhao.xyz/Studere-Knowledge-Base/04_Journal/2026/1/2026-02-16</link>
+    <guid>https://quartz.jzhao.xyz/Studere-Knowledge-Base/04_Journal/2026/1/2026-02-16</guid>
+    <description><![CDATA[ 📅 2026-02-16 🧭 Navigation ⚔️ 打开战况面板 🕹️ System Boot (每日开机) 💧 Hydrate: 300ml 水 🧠 Sync: 昨晚锁定的今日 MVP → [ ] 执行！ 📥 The Stream (核心语流) 全天流水账：A/P/N + D/W/L/X 代码记录 🔐 密码本 (Legend) 时间: A=AM, P=PM, N=Night 类型: D=Deep Work (学习/资产), W=Work (搞钱), L=Life (生存), X=Waste (摸鱼) 示例: A9 D.听NotebookLM 60m &gt; 懂了Skel... ]]></description>
+    <pubDate>Mon, 16 Feb 2026 04:51:37 GMT</pubDate>
+  </item><item>
+    <title>The Collision 影响的谱系</title>
+    <link>https://quartz.jzhao.xyz/Studere-Knowledge-Base/The-Collision-%E5%BD%B1%E5%93%8D%E7%9A%84%E8%B0%B1%E7%B3%BB</link>
+    <guid>https://quartz.jzhao.xyz/Studere-Knowledge-Base/The-Collision-%E5%BD%B1%E5%93%8D%E7%9A%84%E8%B0%B1%E7%B3%BB</guid>
+    <description><![CDATA[ Phase 2-V: The Collision (Genealogy of Style) - Chinese Literary Constellation Focus: Parallel lineages and structural echoes in the Chinese literary tradition that anticipate or parallel Proust’s “translator” metaphor and his syntax of memory. ]]></description>
+    <pubDate>Sun, 15 Feb 2026 15:49:12 GMT</pubDate>
+  </item><item>
+    <title>Critical Commentary</title>
+    <link>https://quartz.jzhao.xyz/Studere-Knowledge-Base/Critical-Commentary</link>
+    <guid>https://quartz.jzhao.xyz/Studere-Knowledge-Base/Critical-Commentary</guid>
+    <description><![CDATA[ Phase 2-IVa: Critical Commentary (Canonical Readers) Focus: Proust read by major critics on the passage concerning the writer as translator, the materials of literature, and the deciphering of signs. ]]></description>
+    <pubDate>Sun, 15 Feb 2026 15:46:05 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>

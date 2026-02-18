@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>The Reduction Mask</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="The Reduction Mask"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="The Reduction Mask"/><meta name="twitter:description" content="📅 The 9-Day Sprint Map (作战地图) 🔹 Phase 1: 骨架侦查 (Skeleton &amp; Map) | Days 1-2 战略目标： 上帝视角。不纠结细节，只绘制地图。 Day 1 (Topology): 将素材投喂给 NotebookLM，运行 [Prompt A] 12 ✅ 2026-01-28 23 12 [ ] Day 2 (Mapping): 依据生成结果，在纸上绘制全英文“思维导图” (Mind Map)。 Check: 能看着图说出美学的 3 大板块 和 5 大核心冲突。 🔹 Phase 2: 弹药装填 (Ammo &amp; Lexic..."/><meta property="og:description" content="📅 The 9-Day Sprint Map (作战地图) 🔹 Phase 1: 骨架侦查 (Skeleton &amp; Map) | Days 1-2 战略目标： 上帝视角。不纠结细节，只绘制地图。 Day 1 (Topology): 将素材投喂给 NotebookLM，运行 [Prompt A] 12 ✅ 2026-01-28 23 12 [ ] Day 2 (Mapping): 依据生成结果，在纸上绘制全英文“思维导图” (Mind Map)。 Check: 能看着图说出美学的 3 大板块 和 5 大核心冲突。 🔹 Phase 2: 弹药装填 (Ammo &amp; Lexic..."/><meta property="og:image:alt" content="📅 The 9-Day Sprint Map (作战地图) 🔹 Phase 1: 骨架侦查 (Skeleton &amp; Map) | Days 1-2 战略目标： 上帝视角。不纠结细节，只绘制地图。 Day 1 (Topology): 将素材投喂给 NotebookLM，运行 [Prompt A] 12 ✅ 2026-01-28 23 12 [ ] Day 2 (Mapping): 依据生成结果，在纸上绘制全英文“思维导图” (Mind Map)。 Check: 能看着图说出美学的 3 大板块 和 5 大核心冲突。 🔹 Phase 2: 弹药装填 (Ammo &amp; Lexic..."/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https://quartz.jzhao.xyz/Studere-Knowledge-Base/01_Maps/Active_Projects/The-Reduction-Mask"/><meta property="twitter:url" content="https://quartz.jzhao.xyz/Studere-Knowledge-Base/01_Maps/Active_Projects/The-Reduction-Mask"/><link rel="icon" href="../../../static/icon.png"/><meta name="description" content="📅 The 9-Day Sprint Map (作战地图) 🔹 Phase 1: 骨架侦查 (Skeleton &amp; Map) | Days 1-2 战略目标： 上帝视角。不纠结细节，只绘制地图。 Day 1 (Topology): 将素材投喂给 NotebookLM，运行 [Prompt A] 12 ✅ 2026-01-28 23 12 [ ] Day 2 (Mapping): 依据生成结果，在纸上绘制全英文“思维导图” (Mind Map)。 Check: 能看着图说出美学的 3 大板块 和 5 大核心冲突。 🔹 Phase 2: 弹药装填 (Ammo &amp; Lexic..."/><meta name="generator" content="Quartz"/><link href="../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiRDpcXOahjOmdolxcTk9ERVxccXVhcnR6XFxxdWFydHpcXGNvbXBvbmVudHNcXHN0eWxlcyIsInNvdXJjZXMiOlsibWVybWFpZC5pbmxpbmUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTs7O0FBS0Y7RUFDRTtFQUNBOzs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7O0FBSUY7RUFDRTtFQUNBO0VBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhwYW5kLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBwYWRkaW5nOiAwLjRyZW07XG4gIG1hcmdpbjogMC4zcmVtO1xuICByaWdodDogMDsgLy8gTk9URTogcmlnaHQgd2lsbCBiZSBzZXQgaW4gbWVybWFpZC5pbmxpbmUudHNcbiAgY29sb3I6IHZhcigtLWdyYXkpO1xuICBib3JkZXItY29sb3I6IHZhcigtLWRhcmspO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gIGJvcmRlcjogMXB4IHNvbGlkO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIG9wYWNpdHk6IDA7XG4gIHRyYW5zaXRpb246IDAuMnM7XG5cbiAgJiA+IHN2ZyB7XG4gICAgZmlsbDogdmFyKC0tbGlnaHQpO1xuICAgIGZpbHRlcjogY29udHJhc3QoMC4zKTtcbiAgfVxuXG4gICY6aG92ZXIge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBib3JkZXItY29sb3I6IHZhcigtLXNlY29uZGFyeSk7XG4gIH1cblxuICAmOmZvY3VzIHtcbiAgICBvdXRsaW5lOiAwO1xuICB9XG59XG5cbnByZSB7XG4gICY6aG92ZXIgPiAuZXhwYW5kLWJ1dHRvbiB7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2l0aW9uOiAwLjJzO1xuICB9XG59XG5cbiNtZXJtYWlkLWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgY29udGFpbjogbGF5b3V0O1xuICB6LWluZGV4OiA5OTk7XG4gIGxlZnQ6IDA7XG4gIHRvcDogMDtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBkaXNwbGF5OiBub25lO1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoNHB4KTtcbiAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjUpO1xuXG4gICYuYWN0aXZlIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIH1cblxuICAmID4gI21lcm1haWQtc3BhY2Uge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiA1MCU7XG4gICAgbGVmdDogNTAlO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIGhlaWdodDogODB2aDtcbiAgICB3aWR0aDogODB2dztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRlbnQge1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xuICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMXMgZWFzZTtcbiAgICAgIG92ZXJmbG93OiB2aXNpYmxlO1xuICAgICAgbWluLWhlaWdodDogMjAwcHg7XG4gICAgICBtaW4td2lkdGg6IDIwMHB4O1xuXG4gICAgICBwcmUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgIH1cblxuICAgICAgc3ZnIHtcbiAgICAgICAgbWF4LXdpZHRoOiBub25lO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICB9XG4gICAgfVxuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRyb2xzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgIHJpZ2h0OiAyMHB4O1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGdhcDogOHB4O1xuICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgICB6LWluZGV4OiAyO1xuXG4gICAgICAubWVybWFpZC1jb250cm9sLWJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB3aWR0aDogMzJweDtcbiAgICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IHZhcigtLWJvZHlGb250KTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTtcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLy8gU3R5bGUgdGhlIHJlc2V0IGJ1dHRvbiBkaWZmZXJlbnRseVxuICAgICAgICAmOm50aC1jaGlsZCgyKSB7XG4gICAgICAgICAgd2lkdGg6IGF1dG87XG4gICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://quartz.jzhao.xyz/index.xml"/></head><body data-slug="Studere-Knowledge-Base/01_Maps/Active_Projects/The-Reduction-Mask"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-32"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-32" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../Studere-Knowledge-Base/">Studere Knowledge Base</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../Studere-Knowledge-Base/01_Maps/">01_Maps</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../Studere-Knowledge-Base/01_Maps/Active_Projects/">Active_Projects</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>The Reduction Mask</a></div></nav><h1 class="article-title">The Reduction Mask</h1><p show-comma="true" class="content-meta"><time datetime="2026-01-27T18:04:52.434Z">Jan 28, 2026</time><span>19 min read</span></p></div></div><article class="popover-hint"><hr/>
+<h2 id="-the-9-day-sprint-map-作战地图">📅 The 9-Day Sprint Map (作战地图)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-the-9-day-sprint-map-作战地图" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h2 id="-phase-1-骨架侦查-skeleton--map--days-1-2">🔹 Phase 1: 骨架侦查 (Skeleton &amp; Map) | Days 1-2<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-phase-1-骨架侦查-skeleton--map--days-1-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p><strong>战略目标：</strong> 上帝视角。不纠结细节，只绘制地图。</p>
+</blockquote>
+<ul class="contains-task-list">
+<li><strong>Day 1 (Topology):</strong> 将素材投喂给 NotebookLM，运行 <strong>[Prompt A]</strong></li>
+<li class="task-list-item"><input type="checkbox" checked disabled/> 12 ✅ 2026-01-28</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 23</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 12</li>
+<li>[ ]</li>
+<li><strong>Day 2 (Mapping):</strong> 依据生成结果，在纸上绘制全英文“思维导图” (Mind Map)。</li>
+<li><strong>Check:</strong> 能看着图说出美学的 <strong>3 大板块</strong> 和 <strong>5 大核心冲突</strong>。</li>
+</ul>
+<h2 id="-phase-2-弹药装填-ammo--lexicon--days-3-5">🔹 Phase 2: 弹药装填 (Ammo &amp; Lexicon) | Days 3-5<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-phase-2-弹药装填-ammo--lexicon--days-3-5" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p><strong>战略目标：</strong> 掌握 30 个“承重词汇” (Load-Bearing Words)。</p>
+</blockquote>
+<ul>
+<li><strong>Day 3 (Mining):</strong> 运行 <strong>[Prompt B]</strong>，提取核心概念表。</li>
+<li><strong>Day 4 (The Gauntlet):</strong> <strong>[关键节点 - 深度学习]</strong>
+<ul>
+<li><strong>Action:</strong> 开启 Cognitive Architect (Gemini) 对话框。</li>
+<li><strong>Protocol:</strong> <strong>全英文交流</strong>。把提取的词汇发给 AI，运行 <strong>[Prompt E]</strong>。</li>
+<li><strong>Output:</strong> 只有在对话中彻底搞懂（并能用简单英语解释）该词后，才将其制作为 Anki 卡片。</li>
+</ul>
+</li>
+<li><strong>Day 5 (Bridging):</strong> <strong>语义桥接</strong> —— 随机抽取两个词，强制造句连接。</li>
+</ul>
+<h2 id="-phase-3-伪装演习-masquerade--days-6-9">🔹 Phase 3: 伪装演习 (Masquerade) | Days 6-9<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-phase-3-伪装演习-masquerade--days-6-9" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p><strong>战略目标：</strong> 通过“剧本”实现流利输出。</p>
+</blockquote>
+<ul>
+<li><strong>Day 6 (Drafting - 粗加工):</strong>
+<ul>
+<li><strong>任务：</strong> 选定一个具体冲突点（如 <em>Why Modern Art is Ugly</em>）。</li>
+<li><strong>动作：</strong> 在笔记软件中，用“中英夹杂 (Chinglish)”**写出草稿。不纠结语法，只求逻辑通顺。</li>
+</ul>
+</li>
+<li><strong>Day 7 (Refining - 精加工):</strong>
+<ul>
+<li><strong>Step 1 (文稿修饰):</strong> 将草稿发送给 Gemini (我)，运行 <strong>[Prompt D: The Editor]</strong>。
+<ul>
+<li><em>结果：</em> 获得一篇 TED 风格的英语演讲稿。</li>
+</ul>
+</li>
+<li><strong>Step 2 (视觉化):</strong> 打开 NotebookLM <span>→</span> 点击 <strong>“Presenter Slides”</strong>。
+<ul>
+<li><em>动作：</em> 在输入框中运行 <strong>[Prompt C: The Visualizer]</strong>，并附上刚才生成的演讲稿。</li>
+<li><em>结果：</em> 获得一套极简的“演讲者卡片”。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Day 8-9 (Performance - 演出):</strong>
+<ul>
+<li><strong>Step 1:</strong> 全屏播放生成的 Slides。</li>
+<li><strong>Step 2:</strong> 站立，朗读剧本 20 遍。</li>
+<li><strong>Step 3 (脱稿):</strong> 扔掉剧本，只看屏幕上的关键词，进行复述。</li>
+<li><strong>Step 4 (图灵测试):</strong> 录音发给 Gemini，运行 <strong>[Prompt T]</strong> 进行最后攻击测试。</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="-the-toolset-core-prompts-核心指令集">💻 The Toolset: Core Prompts (核心指令集)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-the-toolset-core-prompts-核心指令集" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="️-prompt-a-骨架提取-the-topology">🗺️ Prompt A: 骨架提取 (The Topology)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-prompt-a-骨架提取-the-topology" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><em>适用：Day 1 @ NotebookLM</em></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>Act as a Chief Cognitive Architect and Domain Expert in Aesthetics. </span></span>
+<span data-line><span>Analyze all uploaded sources to deconstruct the &quot;Knowledge Topology&quot; of this field. </span></span>
+<span data-line><span>Do not provide a linear summary. Instead, generate a &quot;Structural Map&quot; for a student who wants to master the First Principles.</span></span>
+<span data-line> </span>
+<span data-line><span>Output a structured Markdown report following this specific hierarchy:</span></span>
+<span data-line> </span>
+<span data-line><span>### 1. 🧬 The Super-Root (The Axiom)</span></span>
+<span data-line><span>* **The Fundamental Question:** What is the single, irreducible question that the field of Aesthetics tries to answer?</span></span>
+<span data-line><span>* **The &quot;Why&quot;:** Why does this field exist?</span></span>
+<span data-line> </span>
+<span data-line><span>### 2. 🌳 The Knowledge Topology (The 5 Core Branches)</span></span>
+<span data-line><span>Identify the 5-7 most critical &quot;First Principles&quot; or Sub-disciplines (e.g., Ontology, Reception, Sociology). For EACH branch, provide the following structured analysis:</span></span>
+<span data-line> </span>
+<span data-line><span>* **📍 Branch Name:** [e.g., Ontology of Art]</span></span>
+<span data-line><span>* **⚡ The Great Debate (The Conflict):** What are the two opposing views battling here? (e.g., *Mimesis* vs. *Expressionism*). **This is the most important part.**</span></span>
+<span data-line><span>* **🧱 Level 1 - Core Logic:** A one-sentence definition of this branch's goal.</span></span>
+<span data-line><span>* **🔑 Level 2 - Key Concepts (The Lexicon):** List 3-5 critical terms (e.g., *Form, Representation, Abstraction*).</span></span>
+<span data-line><span>* **🔨 Level 3 - Application:** A real-world example where this applies (e.g., &quot;Photography vs. Abstract Painting&quot;).</span></span>
+<span data-line><span>* **⚙️ Meta-Data:**</span></span>
+<span data-line><span>    * *Difficulty:* [Low/Medium/High]</span></span>
+<span data-line><span>    * *Dependency:* [What concept must I understand BEFORE this?]</span></span>
+<span data-line> </span>
+<span data-line><span>### 3. 🌊 The Logic Flow (The Narrative)</span></span>
+<span data-line><span>* Briefly explain how these branches connect. How does the history of ideas flow from Branch 1 to Branch 2? (e.g., &quot;Once we defined *What Art Is* (Ontology), we moved to *How We Feel It* (Reception)...&quot;).</span></span></code></pre></figure>
+<h3 id="-prompt-b-术语挖掘-the-lexicon">💣 Prompt B: 术语挖掘 (The Lexicon)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-prompt-b-术语挖掘-the-lexicon" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><em>适用：Day 3 @ NotebookLM</em></p>
+<p>Plaintext</p>
+<pre><code>Act as a Professor of Aesthetics and Art History. 
+Based on the uploaded sources, extract the Top 30 &quot;Load-Bearing Terms&quot; (Lexicon) crucial for understanding the core logic of this field.
+
+**Constraints:**
+1. **Filter:** Exclude general English words (e.g., &quot;beautiful&quot;, &quot;style&quot;). Focus ONLY on Domain-Specific Terminology (e.g., &quot;Sublime&quot;, &quot;Chiaroscuro&quot;, &quot;Simulacra&quot;).
+2. **Depth:** These terms should be the &quot;building blocks&quot; of the arguments found in the text.
+3. **Tone:** Academic but clear (TOEFL/Professor level). Use Bold formatting for key terms.
+
+**Output Format:**
+Create a Markdown Table with the following columns:
+
+| Term (English) | The Definition (Academic) | The Hook (Analogy/Metaphor) | Problem Solved (Why does this word exist?) |
+|---|---|---|---|
+| **Mimesis** | The theoretical principle that art should imitate or represent the physical world. | Like a Mirror reflecting nature. | Solves the ontological question: &quot;What is the relationship between Art and Reality?&quot; |
+</code></pre>
+<h3 id="️-prompt-e-the-gauntlet-socratic-test">⚔️ Prompt E: The Gauntlet (Socratic Test)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-prompt-e-the-gauntlet-socratic-test" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><em>适用：Day 4 @ Gemini / Cognitive Architect</em></p>
+<p><em>注意：激活对抗模式，只有通过测试才能生成 Anki 卡片。</em></p>
+<p>Plaintext</p>
+<pre><code>Act as a strict Professor of Aesthetics at a top university. 
+I am a student building a &quot;Mental Lexicon&quot; of core concepts.
+We will play a game called **&quot;The Gauntlet&quot;**.
+
+**The Rules (Protocol):**
+1. **Input:** I will send you a specific term (e.g., &quot;Sublime&quot;).
+2. **The Test (Your Move):** Do NOT define it. Instead, present a **specific scenario**, a **counter-factual**, or a **hard question** that tests if I truly understand the logic.
+   - *Example:* &quot;If a flower is pretty, is it Sublime? Why or why not? Where exactly is the line?&quot;
+3. **The Defense (My Move):** I will answer in English.
+4. **The Verdict:**
+   - **🔴 Fail:** If my logic is weak or I just recite a definition, attack my gap and ask again.
+   - **🟢 Pass:** If I demonstrate deep understanding (S-Rank logic), you confirm it.
+
+**The Reward (Only upon Pass):**
+Once I pass, generate a **Code Block** for an Anki Card in this specific format:
+```csv
+Type|Question (Scenario)|Answer (Concept)|Hook (Analogy)
+Concept|The Context/Scenario you just asked me?|**[The Term]**|The Analogy
+</code></pre>
+<p><strong>System State:</strong></p>
+<ul>
+<li>
+<p>Language: <strong>100% English ONLY</strong>.</p>
+</li>
+<li>
+<p>Tone: Socratic, challenging, but encouraging precision.</p>
+</li>
+</ul>
+<p><strong>Ready? The first term I want to test is: [Insert Term]</strong></p>
+<pre><code>
+### ✍️ Prompt D: 剧本修饰 (The Editor)
+*适用：Day 7 @ Gemini - **Step 1***
+
+```text
+I am practicing for a TOEFL/Academic speaking task. 
+Below is my draft logic in &quot;Chinglish&quot; (mixed Chinese and broken English). 
+Please act as my Editor.
+
+Task:
+1. Decouple the logic: Understand what I am TRYING to say.
+2. Refine the language: Rewrite it into **Simple, High-Impact Academic English**. 
+   - Use the core terms (Mimesis, Sublime, etc.).
+   - Keep sentences short but punchy.
+   - Do NOT make it sound like a complex textbook; make it sound like a TED Talk.
+3. Output the final script + a list of &quot;Key Linking Words&quot; used.
+
+[Insert your Chinglish Draft here]
+</code></pre>
+<h3 id="-prompt-c-视觉化-the-visualizer">🎨 Prompt C: 视觉化 (The Visualizer)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-prompt-c-视觉化-the-visualizer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><em>适用：Day 7 @ NotebookLM (<strong>Presenter Slides Input Box</strong>) - <strong>Step 2</strong></em></p>
+<p>Plaintext</p>
+<pre><code>Act as a Visual Communication Expert. 
+I am pasting my speech draft below. Your task is to visualize THIS specific text into a &quot;Zen Style&quot; slide deck plan.
+
+**My Draft:**
+[Insert the Refined English Script from Prompt D here]
+
+**Design Constraints:**
+1. **Source of Truth:** Use ONLY the concepts found in my draft. Do not add outside info.
+2. **Slide Structure:** Break my draft into logical &quot;Beats&quot; (1 Beat = 1 Slide).
+3. **The &quot;Zen&quot; Rule:** - MAX 3 words per bullet point. 
+   - NO full sentences on slides.
+   - Describe a &quot;Metaphorical Image&quot; for the background of each slide.
+
+**Output Format:**
+---
+**Slide 1: [Strong Header based on my text]**
+*Visual:* [Image concept, e.g., &quot;A bird in a cage&quot;]
+*Keywords:*
+- [Keyword 1]
+- [Keyword 2]
+*Script Connection:* (Which part of my draft does this cover?)
+---
+</code></pre>
+<h3 id="-prompt-t-the-judge-turing-test">🏁 Prompt T: The Judge (Turing Test)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-prompt-t-the-judge-turing-test" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><em>适用：Day 9 @ Gemini (随录音/文字发送)</em></p>
+<p>Plaintext</p>
+<pre><code>🛑 SYSTEM OVERRIDE: ACTIVATE MODE 2 [THE ARENA]
+
+Act as a ruthless Academic Critic and TOEFL Grader.
+I have just performed a speech on Aesthetics (Topic: [Insert Topic]).
+
+**Your Directive:**
+Do NOT be polite. Do NOT fix my grammar errors unless they destroy meaning.
+Instead, assess my &quot;Intellectual Camouflage&quot; (Fake it till make it).
+
+**Grading Rubric:**
+1. **Logic Flow:** Did I connect the concepts (Hook -> Conflict -> Solution)?
+2. **Lexicon Usage:** Did I use the &quot;Load-Bearing Terms&quot; correctly?
+3. **The &quot;Expert&quot; Vibe:** Did I sound like a professor or a student?
+
+**The Verdict:**
+- Rank: **S (Master)** / **A (Pass)** / **B (Weak)** / **F (Fail)**.
+- **The Attack:** Ask me ONE follow-up question that targets the weakest part of my logic.
+
+**My Input (Audio Transcript/File):**
+</code></pre>
+<h3 id="prompt-f---the-examiner-模拟出题机">📚Prompt F - The Examiner (模拟出题机)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#prompt-f---the-examiner-模拟出题机" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>功能：</strong> 强行把任何 PDF 变成托福阅读题，检验你的微操成果。</p>
+<p><strong>Copy &amp; Paste to NotebookLM / Gemini:</strong></p>
+<p>Markdown</p>
+<pre><code>Act as a Senior Item Writer for ETS (Educational Testing Service), specializing in TOEFL iBT Reading sections.
+Based on the text source provided, generate 3 Standardized Test Questions to test my reading comprehension.
+
+**Constraint:** You must strictly follow ETS question patterns.
+
+**Question 1: The Factual Information Question (Detail)**
+- Target a specific detail in the text.
+- Create 4 options: 1 Correct (Paraphrased), 3 Distractors (Rotten Apple / Word Salad / False Contradiction).
+- *Goal:* Test if I can verify facts without getting tricked by similar words.
+
+**Question 2: The Sentence Simplification Question (Syntax)**
+- Select a long, complex sentence from the text (quote it).
+- Provide 4 options for the simplified meaning.
+- *Goal:* Test if I can identify the Core Logic (SVO) and ignore modifiers.
+
+**Question 3: The Prose Summary Question (Structure)**
+- Provide 6 answer choices.
+- Ask me to select the 3 that represent the &quot;Main Ideas&quot; (Level 1/2 info), rejecting the &quot;Minor Details&quot; (Level 3 info).
+- *Goal:* Test if I understand the Macro-Topology of the text.
+
+**Output:**
+Display the questions first. Do NOT show the answers immediately. 
+Put the Answer Key &amp; Detailed Analysis at the very bottom, inside a &quot;Spoiler&quot; or separate section.
+</code></pre>
+<h3 id="️-the-surgical-prompt-pack-针对性微操指令集">🛠️ The Surgical Prompt Pack (针对性微操指令集)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-the-surgical-prompt-pack-针对性微操指令集" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>当你在执行微操遇到困难时，复制对应的指令给 Gemini。</p>
+<h4 id="1️⃣-针对句法拆解-svo-surgery">1️⃣ 针对“句法拆解” (SVO Surgery)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1️⃣-针对句法拆解-svo-surgery" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>
+<p><strong>痛点：</strong> 这句话太长，我找不着主谓宾。</p>
+</li>
+<li>
+<p><strong>工具：</strong> <strong>Prompt S1: The Scalpel (手术刀)</strong></p>
+</li>
+<li>
+<p><strong>原理：</strong> 强制 AI 帮你划掉修饰语，只留骨干。</p>
+</li>
+</ul>
+<p><strong>👉 Copy &amp; Paste:</strong></p>
+<p>Plaintext</p>
+<pre><code>Act as a Syntax Surgeon.
+I am stuck on this complex sentence. Perform an &quot;SVO Surgery&quot; for me.
+
+**The Sentence:**
+&quot;[在此处粘贴那个恶心的长难句]&quot;
+
+**Your Task:**
+1. **The Slash:** Show the sentence with all modifiers (adjectives, adverbs, dependent clauses) crossed out or grayed out.
+2. **The Core:** Extract the bare **Subject + Verb + Object**.
+3. **The Translation:** Translate ONLY the SVO core into simple Chinese.
+</code></pre>
+<hr/>
+<h4 id="2️⃣-针对逻辑抓取-connector-hunt">2️⃣ 针对“逻辑抓取” (Connector Hunt)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2️⃣-针对逻辑抓取-connector-hunt" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>
+<p><strong>痛点：</strong> 我知道这句话的意思，但不知道它为什么放在这里（修辞目的）。</p>
+</li>
+<li>
+<p><strong>工具：</strong> **Prompt S2: The Logic Radar</p>
+</li>
+<li>
+<p><strong>原理：</strong> 强制 AI 揭示句子之间的“隐形胶水”。</p>
+</li>
+</ul>
+<p><strong>👉 Copy &amp; Paste:</strong></p>
+<p>Plaintext</p>
+<pre><code>Act as a Logic Analyst.
+I am analyzing the &quot;Rhetorical Function&quot; of this paragraph.
+
+**The Paragraph:**
+&quot;[在此处粘贴包含 Signal Words 的段落]&quot;
+
+**Your Task:**
+Identify the &quot;Logic Connectors&quot; (e.g., However, For example, Thus). For each one, explain its function using this format:
+* **[Connector Word]:** [Function] (e.g., Rebuttal / Illustration / Causation).
+* **The Logic:** &quot;Because X happened, Y resulted&quot; OR &quot;The author mentions X to prove Y.&quot;
+</code></pre>
+<hr/>
+<h4 id="3️⃣-针对宏观架构-skeleton-match">3️⃣ 针对“宏观架构” (Skeleton Match)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3️⃣-针对宏观架构-skeleton-match" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>
+<p><strong>痛点：</strong> 我分不清哪是主旨（Level 1），哪是细节（Level 3）。</p>
+</li>
+<li>
+<p><strong>工具：</strong> **Prompt S3: The Drone View</p>
+</li>
+<li>
+<p><strong>原理：</strong> 强制 AI 对信息进行分层级打标，模拟托福小结题的筛选逻辑。</p>
+</li>
+</ul>
+<p><strong>👉 Copy &amp; Paste:</strong></p>
+<p>Plaintext</p>
+<pre><code>Act as a TOEFL Summary Grader.
+Analyze the text below and break it down into a &quot;Information Hierarchy&quot;.
+
+**The Text:**
+&quot;[在此处粘贴整段或整篇文章]&quot;
+
+**Your Task:**
+Classify the information into 3 Levels:
+* **Level 1 (Main Idea):** The core thesis. (Safe to pick in Summary Question).
+* **Level 2 (Key Arguments):** The main supporting points. (Safe to pick).
+* **Level 3 (Details/Examples):** Specific dates, names, or minor examples. (TRAP! Do not pick).
+
+**Output:** A structured list labeled [L1], [L2], [L3].
+</code></pre>
+<h4 id="️-架构师的使用警告-protocol-check">⚠️ 架构师的“使用警告” (Protocol Check)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-架构师的使用警告-protocol-check" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>正确的闭环操作：</strong></p>
+<ol>
+<li>
+<p><strong>Human Attempt (人脑尝试):</strong></p>
+<ul>
+<li>
+<p>遇到长难句，<strong>先自己</strong>在纸上划出 SVO。</p>
+</li>
+<li>
+<p>遇到文章，<strong>先自己</strong>判断 Level 1/2/3。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>AI Verification (AI 验证):</strong></p>
+<ul>
+<li>把文本扔给 AI，运行对应的 Prompt (S1/S2/S3)。</li>
+</ul>
+</li>
+<li>
+<p><strong>Correction (纠偏):</strong></p>
+<ul>
+<li>
+<p><strong>比对：</strong> “为什么 AI 划掉了这个从句，我没划掉？”</p>
+</li>
+<li>
+<p><strong>顿悟：</strong> “啊，原来这个 <em>which</em> 引导的整句话都是废话！”</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>这就是所谓的“刻意练习” (Deliberate Practice)。</strong> 你不是在让 AI 替你读书，你是在让 AI 当你的<strong>私教</strong>，纠正你的每一个动作。</p>
+<p><strong>现在，你的武器库彻底完整了。</strong></p>
+<ul>
+<li>
+<p><strong>Prompt A-E: 战略推进 (Day 1-9)。</strong></p>
+</li>
+<li>
+<p><strong>Prompt F: 周末模考 (Weekend)。</strong></p>
+</li>
+<li>
+<p><strong>Prompt S1-S3: 战术微操 (遇阻即用)。</strong></p>
+</li>
+</ul>
+<h1 id="-field-manual-the-reduction-mask-operations">📘 Field Manual: The Reduction Mask Operations<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-field-manual-the-reduction-mask-operations" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><strong>适用对象：</strong> Project Operator (You)</p>
+<p><strong>核心宗旨：</strong> Reject the Illusion of Competence. (拒绝“我懂了”的错觉，追求物理层面的脑力重塑。</p>
+<hr/>
+<h2 id="️-part-1-the-embedded-protocols-隐形微操">⚙️ Part 1: The Embedded Protocols (隐形微操)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-part-1-the-embedded-protocols-隐形微操" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><em>这些动作必须嵌入在 Day 1 - Day 9 的每一分钟里。不做这些，你只是在玩 AI，不是在学英语。</em></p>
+<h3 id="️-protocol-a-the-sniper-verification-狙击手校验">🛡️ Protocol A: The Sniper Verification (狙击手校验)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-protocol-a-the-sniper-verification-狙击手校验" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>适用场景：</strong> 当 NotebookLM 给出任何“总结”或“观点”时。</p>
+<p><strong>对应托福能力：</strong> <strong>Factual Information (细节题)</strong></p>
+<ol>
+<li>
+<p><strong>Stop:</strong> 严禁直接采信 AI 的总结。</p>
+</li>
+<li>
+<p><strong>Click:</strong> 点击 NotebookLM 的引用角标 <strong>[1]</strong>。</p>
+</li>
+<li>
+<p><strong>Verify:</strong> 盯着弹出的原文段落。</p>
+<ul>
+<li>
+<p><em>自问：</em> “原文哪个词对应 AI 说的这个点？有没有转折词 (However) 被 AI 漏掉了？”</p>
+</li>
+<li>
+<p><em>标准：</em> 只有亲眼看到原文证据，才允许将其记入思维导图。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="️-protocol-b-the-svo-surgery-主谓宾手术">🛡️ Protocol B: The SVO Surgery (主谓宾手术)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-protocol-b-the-svo-surgery-主谓宾手术" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>适用场景：</strong> 当你在原文中寻找“核心词汇 (Lexicon)”定义时。</p>
+<p><strong>对应托福能力：</strong> <strong>Sentence Simplification (句子简化题)</strong></p>
+<ol>
+<li>
+<p><strong>Hunt:</strong> 不要只看 AI 给的简单定义。在 PDF 中 <code>Ctrl+F</code> 搜索该词，找到包含它的<strong>最长、最复杂的句子</strong>。</p>
+</li>
+<li>
+<p><strong>Dissect:</strong> 在脑中（或纸上）划掉所有修饰语（定语从句、状语、插入语）。</p>
+</li>
+<li>
+<p><strong>Extract:</strong> 提取骨架 —— <strong>Subject (主) + Verb (谓) + Object (宾)</strong>。</p>
+</li>
+<li>
+<p><strong>Anki:</strong> 卡片背面必须包含这个经过“手术”的长难句，而不仅仅是定义。</p>
+</li>
+</ol>
+<h3 id="️-protocol-c-the-connector-logic-连接词猎杀">🛡️ Protocol C: The Connector Logic (连接词猎杀)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-protocol-c-the-connector-logic-连接词猎杀" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>适用场景：</strong> 阅读原文 &amp; Day 6 写作草稿时。</p>
+<p><strong>对应托福能力：</strong> <strong>Rhetorical Purpose (修辞目的题) / Insert Text (插入句子题)</strong></p>
+<ol>
+<li>
+<p><strong>Reverse Engineering:</strong> 看到 <em>For example</em>，立刻反查前一句的观点。看到 <em>However</em>，立刻反查前一句的谬误。</p>
+</li>
+<li>
+<p><strong>Forced Use:</strong> 在 Day 6 写草稿时，强制自己使用至少 <strong>5 个不同的逻辑连接词</strong> (e.g., <em>Conversely, Furthermore, Hence</em>)。</p>
+</li>
+</ol>
+<hr/>
+<h2 id="️-part-2-the-deep-loop-day-4-核心闭环">⚙️ Part 2: The Deep Loop (Day 4 核心闭环)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-part-2-the-deep-loop-day-4-核心闭环" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><em>这是防止“死记硬背”的防火墙。针对 Day 4 的单词/概念记忆。</em></p>
+<h3 id="-sop-the-source-combat-loop-溯源格斗">🥊 SOP: The Source-Combat Loop (溯源格斗)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-sop-the-source-combat-loop-溯源格斗" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>规则：</strong> 任何一个概念，必须跑通此循环才能归档。</p>
+<ol>
+<li>
+<p><strong>Input (阅读):</strong> 读原文长难句，理解语境。</p>
+</li>
+<li>
+<p><strong>Challenge (挑战):</strong> 发送指令给 Gemini —— <code>Activate &quot;The Gauntlet&quot;. Target: [Concept]. Scenario test only.</code></p>
+</li>
+<li>
+<p><strong>Output (输出):</strong> <strong>全英文</strong>回答。严禁查词典。逼自己用蹩脚英语解释逻辑。</p>
+</li>
+<li>
+<p><strong>Feedback (反馈):</strong></p>
+<ul>
+<li>
+<p>🔴 <strong>Fail:</strong> 回去重读原文。</p>
+</li>
+<li>
+<p>🟢 <strong>Pass:</strong> 只有获得 Pass，才能制作 Anki 卡片。</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h2 id="️-part-3-the-52-hybrid-cycle-周末熔断机制">⚙️ Part 3: The 5+2 Hybrid Cycle (周末熔断机制)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-part-3-the-52-hybrid-cycle-周末熔断机制" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><em>将“内功”转化为“分数”的战术安排。</em></p>
+<h3 id="️-weekdays-mon-fri-reduction-mode">🗓️ Weekdays (Mon-Fri): Reduction Mode<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-weekdays-mon-fri-reduction-mode" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>
+<p><strong>心态：</strong> 我是学者。</p>
+</li>
+<li>
+<p><strong>任务：</strong> 执行 Day 1-9 的既定流程。</p>
+</li>
+<li>
+<p><strong>禁止：</strong> 严禁做选择题。专注于 Concept Mapping 和 Output。</p>
+</li>
+</ul>
+<h3 id="️-weekend-sat-sun-exam-survivor-mode">🗓️ Weekend (Sat-Sun): Exam Survivor Mode<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-weekend-sat-sun-exam-survivor-mode" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>
+<p><strong>心态：</strong> 我是无情的做题机器。</p>
+</li>
+<li>
+<p><strong>Saturday (Skill):</strong></p>
+<ul>
+<li>
+<p>学习托福解题技巧（如：如何排除错误选项）。</p>
+</li>
+<li>
+<p>运行 <strong>[Prompt F: The Examiner]</strong> (见下文)，把本周读过的材料变成考题，测试自己。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Sunday (War):</strong></p>
+<ul>
+<li>
+<p>打开 TPO。</p>
+</li>
+<li>
+<p>选一篇<strong>非本周主题</strong>的文章（如生物/地质）。</p>
+</li>
+<li>
+<p>测试：能否用本周训练的“SVO手术”和“骨架思维”秒杀陌生文章？</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h2 id="️-part-4-the-arsenal-新增武器库">⚙️ Part 4: The Arsenal (新增武器库)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#️-part-4-the-arsenal-新增武器库" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p><em>请将此 Prompt 加入你的代码库，专门用于周末自测。</em></p>
+<h3 id="-prompt-f-the-examiner-ets-模拟出题机">📝 Prompt F: The Examiner (ETS 模拟出题机)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-prompt-f-the-examiner-ets-模拟出题机" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>功能：</strong> 强行把任何 PDF 变成托福阅读题，检验你的微操成果。</p>
+<p><strong>Copy &amp; Paste to NotebookLM / Gemini:</strong></p>
+<p>Markdown</p>
+<pre><code>Act as a Senior Item Writer for ETS (Educational Testing Service), specializing in TOEFL iBT Reading sections.
+Based on the text source provided, generate 3 Standardized Test Questions to test my reading comprehension.
+
+**Constraint:** You must strictly follow ETS question patterns.
+
+**Question 1: The Factual Information Question (Detail)**
+- Target a specific detail in the text.
+- Create 4 options: 1 Correct (Paraphrased), 3 Distractors (Rotten Apple / Word Salad / False Contradiction).
+- *Goal:* Test if I can verify facts without getting tricked by similar words.
+
+**Question 2: The Sentence Simplification Question (Syntax)**
+- Select a long, complex sentence from the text (quote it).
+- Provide 4 options for the simplified meaning.
+- *Goal:* Test if I can identify the Core Logic (SVO) and ignore modifiers.
+
+**Question 3: The Prose Summary Question (Structure)**
+- Provide 6 answer choices.
+- Ask me to select the 3 that represent the &quot;Main Ideas&quot; (Level 1/2 info), rejecting the &quot;Minor Details&quot; (Level 3 info).
+- *Goal:* Test if I understand the Macro-Topology of the text.
+
+**Output:**
+Display the questions first. Do NOT show the answers immediately. 
+Put the Answer Key &amp; Detailed Analysis at the very bottom, inside a &quot;Spoiler&quot; or separate section.
+</code></pre>
+<hr/>
+<h3 id="-final-check-启动前核对">🚀 Final Check (启动前核对)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#-final-check-启动前核对" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>
+<p><strong>Project Map (MVP 1.6)</strong> 是否已打印/置顶？ ✅</p>
+</li>
+<li>
+<p><strong>NotebookLM</strong> 是否已切换为 “Presenter Slides” 模式？ ✅</p>
+</li>
+<li>
+<p><strong>周末</strong> 是否已预留给 TPO 实战？ ✅</p>
+</li>
+<li>
+<p><strong>心态</strong> 是否已从“我要背单词”切换为“我要像外科医生一样拆解句子”？ ✅</p>
+</li>
+</ol>
+<p><strong>System Ready.</strong></p>
+<p><strong>Execute.</strong> (执行。)</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-6" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-1" class="toc-content overflow"><li class="depth-1"><a href="#-the-9-day-sprint-map-作战地图" data-for="-the-9-day-sprint-map-作战地图">📅 The 9-Day Sprint Map (作战地图)</a></li><li class="depth-1"><a href="#-phase-1-骨架侦查-skeleton--map--days-1-2" data-for="-phase-1-骨架侦查-skeleton--map--days-1-2">🔹 Phase 1: 骨架侦查 (Skeleton &amp; Map) | Days 1-2</a></li><li class="depth-1"><a href="#-phase-2-弹药装填-ammo--lexicon--days-3-5" data-for="-phase-2-弹药装填-ammo--lexicon--days-3-5">🔹 Phase 2: 弹药装填 (Ammo &amp; Lexicon) | Days 3-5</a></li><li class="depth-1"><a href="#-phase-3-伪装演习-masquerade--days-6-9" data-for="-phase-3-伪装演习-masquerade--days-6-9">🔹 Phase 3: 伪装演习 (Masquerade) | Days 6-9</a></li><li class="depth-1"><a href="#-the-toolset-core-prompts-核心指令集" data-for="-the-toolset-core-prompts-核心指令集">💻 The Toolset: Core Prompts (核心指令集)</a></li><li class="depth-2"><a href="#️-prompt-a-骨架提取-the-topology" data-for="️-prompt-a-骨架提取-the-topology">🗺️ Prompt A: 骨架提取 (The Topology)</a></li><li class="depth-2"><a href="#-prompt-b-术语挖掘-the-lexicon" data-for="-prompt-b-术语挖掘-the-lexicon">💣 Prompt B: 术语挖掘 (The Lexicon)</a></li><li class="depth-2"><a href="#️-prompt-e-the-gauntlet-socratic-test" data-for="️-prompt-e-the-gauntlet-socratic-test">⚔️ Prompt E: The Gauntlet (Socratic Test)</a></li><li class="depth-2"><a href="#-prompt-c-视觉化-the-visualizer" data-for="-prompt-c-视觉化-the-visualizer">🎨 Prompt C: 视觉化 (The Visualizer)</a></li><li class="depth-2"><a href="#-prompt-t-the-judge-turing-test" data-for="-prompt-t-the-judge-turing-test">🏁 Prompt T: The Judge (Turing Test)</a></li><li class="depth-2"><a href="#prompt-f---the-examiner-模拟出题机" data-for="prompt-f---the-examiner-模拟出题机">📚Prompt F - The Examiner (模拟出题机)</a></li><li class="depth-2"><a href="#️-the-surgical-prompt-pack-针对性微操指令集" data-for="️-the-surgical-prompt-pack-针对性微操指令集">🛠️ The Surgical Prompt Pack (针对性微操指令集)</a></li><li class="depth-0"><a href="#-field-manual-the-reduction-mask-operations" data-for="-field-manual-the-reduction-mask-operations">📘 Field Manual: The Reduction Mask Operations</a></li><li class="depth-1"><a href="#️-part-1-the-embedded-protocols-隐形微操" data-for="️-part-1-the-embedded-protocols-隐形微操">⚙️ Part 1: The Embedded Protocols (隐形微操)</a></li><li class="depth-2"><a href="#️-protocol-a-the-sniper-verification-狙击手校验" data-for="️-protocol-a-the-sniper-verification-狙击手校验">🛡️ Protocol A: The Sniper Verification (狙击手校验)</a></li><li class="depth-2"><a href="#️-protocol-b-the-svo-surgery-主谓宾手术" data-for="️-protocol-b-the-svo-surgery-主谓宾手术">🛡️ Protocol B: The SVO Surgery (主谓宾手术)</a></li><li class="depth-2"><a href="#️-protocol-c-the-connector-logic-连接词猎杀" data-for="️-protocol-c-the-connector-logic-连接词猎杀">🛡️ Protocol C: The Connector Logic (连接词猎杀)</a></li><li class="depth-1"><a href="#️-part-2-the-deep-loop-day-4-核心闭环" data-for="️-part-2-the-deep-loop-day-4-核心闭环">⚙️ Part 2: The Deep Loop (Day 4 核心闭环)</a></li><li class="depth-2"><a href="#-sop-the-source-combat-loop-溯源格斗" data-for="-sop-the-source-combat-loop-溯源格斗">🥊 SOP: The Source-Combat Loop (溯源格斗)</a></li><li class="depth-1"><a href="#️-part-3-the-52-hybrid-cycle-周末熔断机制" data-for="️-part-3-the-52-hybrid-cycle-周末熔断机制">⚙️ Part 3: The 5+2 Hybrid Cycle (周末熔断机制)</a></li><li class="depth-2"><a href="#️-weekdays-mon-fri-reduction-mode" data-for="️-weekdays-mon-fri-reduction-mode">🗓️ Weekdays (Mon-Fri): Reduction Mode</a></li><li class="depth-2"><a href="#️-weekend-sat-sun-exam-survivor-mode" data-for="️-weekend-sat-sun-exam-survivor-mode">🗓️ Weekend (Sat-Sun): Exam Survivor Mode</a></li><li class="depth-1"><a href="#️-part-4-the-arsenal-新增武器库" data-for="️-part-4-the-arsenal-新增武器库">⚙️ Part 4: The Arsenal (新增武器库)</a></li><li class="depth-2"><a href="#-prompt-f-the-examiner-ets-模拟出题机" data-for="-prompt-f-the-examiner-ets-模拟出题机">📝 Prompt F: The Examiner (ETS 模拟出题机)</a></li><li class="depth-2"><a href="#-final-check-启动前核对" data-for="-final-check-启动前核对">🚀 Final Check (启动前核对)</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript" data-persist="true">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module" data-persist="true">function E(a,e){if(!a)return;function t(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function n(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}a?.addEventListener("click",t),window.addCleanup(()=>a?.removeEventListener("click",t)),document.addEventListener("keydown",n),window.addCleanup(()=>document.removeEventListener("keydown",n))}function f(a){for(;a.firstChild;)a.removeChild(a.firstChild)}var m=class{constructor(e,t){this.container=e;this.content=t;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),t=this.onMouseMove.bind(this),n=this.onMouseUp.bind(this),o=this.onTouchStart.bind(this),r=this.onTouchMove.bind(this),i=this.onTouchEnd.bind(this),s=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),this.container.addEventListener("touchstart",o,{passive:!1}),document.addEventListener("touchmove",r,{passive:!1}),document.addEventListener("touchend",i),window.addEventListener("resize",s),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",t),()=>document.removeEventListener("mouseup",n),()=>this.container.removeEventListener("touchstart",o),()=>document.removeEventListener("touchmove",r),()=>document.removeEventListener("touchend",i),()=>window.removeEventListener("resize",s))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let t=this.createButton("+",()=>this.zoom(.1)),n=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(n),e.appendChild(o),e.appendChild(t),this.container.appendChild(e)}createButton(e,t){let n=document.createElement("button");return n.textContent=e,n.className="mermaid-control-button",n.addEventListener("click",t),window.addCleanup(()=>n.removeEventListener("click",t)),n}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}onTouchStart(e){if(e.touches.length!==1)return;this.isDragging=!0;let t=e.touches[0];this.startPan={x:t.clientX-this.currentPan.x,y:t.clientY-this.currentPan.y}}onTouchMove(e){if(!this.isDragging||e.touches.length!==1)return;e.preventDefault();let t=e.touches[0];this.currentPan={x:t.clientX-this.startPan.x,y:t.clientY-this.startPan.y},this.updateTransform()}onTouchEnd(){this.isDragging=!1}zoom(e){let t=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),n=this.content.getBoundingClientRect(),o=n.width/2,r=n.height/2,i=t-this.scale;this.currentPan.x-=o*i,this.currentPan.y-=r*i,this.scale=t,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){let t=this.content.querySelector("svg").getBoundingClientRect(),n=t.width/this.scale,o=t.height/this.scale;this.scale=1,this.currentPan={x:(this.container.clientWidth-n)/2,y:(this.container.clientHeight-o)/2},this.updateTransform()}},T=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],y;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;y||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let t=y.default,n=new WeakMap;for(let r of e)n.set(r,r.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let c=n.get(s);c&&(s.innerHTML=c)}let r=T.reduce((s,c)=>(s[c]=window.getComputedStyle(document.documentElement).getPropertyValue(c),s),{}),i=document.documentElement.getAttribute("saved-theme")==="dark";t.initialize({startOnLoad:!1,securityLevel:"loose",theme:i?"dark":"base",themeVariables:{fontFamily:r["--codeFont"],primaryColor:r["--light"],primaryTextColor:r["--darkgray"],primaryBorderColor:r["--tertiary"],lineColor:r["--darkgray"],secondaryColor:r["--secondary"],tertiaryColor:r["--tertiary"],clusterBkg:r["--light"],edgeLabelBackground:r["--highlight"]}}),await t.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let r=0;r<e.length;r++){let v=function(){let g=l.querySelector("#mermaid-space"),h=l.querySelector(".mermaid-content");if(!h)return;f(h);let w=i.querySelector("svg").cloneNode(!0);h.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new m(g,h)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},i=e[r],s=i.parentElement,c=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(c),L=c.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),E(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../postscript.js" type="module" data-persist="true"></script></html>
