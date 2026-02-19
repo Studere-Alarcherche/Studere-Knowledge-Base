@@ -10,19 +10,13 @@
     <link>https://studere-alarcherche.github.io/Studere-Knowledge-Base/Studere-Knowledge-Base/00_System/%F0%9F%93%82-Templates/Tpl_IB</link>
     <guid>https://studere-alarcherche.github.io/Studere-Knowledge-Base/Studere-Knowledge-Base/00_System/%F0%9F%93%82-Templates/Tpl_IB</guid>
     <description><![CDATA[ 🧩 IB: {{title}} Context (The Void): [这里填写为了解决什么问题/填补什么空缺…] The Logic Chain (The Skeleton): Axiom (公理): [不可简化的第一性原理] Mechanism (机制): [推导过程/运作机制] Result (结论): [导出的必然结果] 📊 Structural Map (Mermaid): graph LR A[Axiom] --&gt; B(Mechanism) B --&gt; C{Result} 🖼️ The Warburg Interval (The Montage): Direct... ]]></description>
-    <pubDate>Thu, 19 Feb 2026 12:38:43 GMT</pubDate>
+    <pubDate>Thu, 19 Feb 2026 12:41:25 GMT</pubDate>
   </item><item>
     <title>Tpl_Engram</title>
     <link>https://studere-alarcherche.github.io/Studere-Knowledge-Base/Studere-Knowledge-Base/00_System/%F0%9F%93%82-Templates/Tpl_Engram</link>
     <guid>https://studere-alarcherche.github.io/Studere-Knowledge-Base/Studere-Knowledge-Base/00_System/%F0%9F%93%82-Templates/Tpl_Engram</guid>
     <description><![CDATA[ 🌱 Engram: [Title of the Trace] The Trace (The Artifact): [The specific fact, quote, data point, or image description. ]]></description>
-    <pubDate>Thu, 19 Feb 2026 12:38:43 GMT</pubDate>
-  </item><item>
-    <title>LifeOS War Room</title>
-    <link>https://studere-alarcherche.github.io/Studere-Knowledge-Base/Studere-Knowledge-Base/LifeOS-War-Room</link>
-    <guid>https://studere-alarcherche.github.io/Studere-Knowledge-Base/Studere-Knowledge-Base/LifeOS-War-Room</guid>
-    <description><![CDATA[ \ 🔴 活跃战线 (The Forge) 当前正在燃烧算力的项目。完成一项，将状态改为 done，并将残骸移入 99_Archive，结晶并入 01_Maps。 TABLE WITHOUT ID link(file.name) AS &quot;🔥 战线 (Active Project)&quot;, priority AS &quot;优先级&quot;, &quot;&lt;progress value=&#039;&quot; + progress + &quot;&#039; max=&#039;100&#039;&gt;&lt;/progress&gt; &quot; + pro... ]]></description>
-    <pubDate>Thu, 19 Feb 2026 12:17:57 GMT</pubDate>
+    <pubDate>Thu, 19 Feb 2026 12:41:25 GMT</pubDate>
   </item><item>
     <title>切片01-The Task of a Translator</title>
     <link>https://studere-alarcherche.github.io/Studere-Knowledge-Base/Studere-Knowledge-Base/01_Maps/Bricks/%E5%88%87%E7%89%8701-The-Task-of-a-Translator</link>
@@ -49,8 +43,8 @@
     <pubDate>Thu, 19 Feb 2026 12:10:49 GMT</pubDate>
   </item><item>
     <title>Proustian&amp;Alarcherche</title>
-    <link>https://studere-alarcherche.github.io/Studere-Knowledge-Base/Studere-Knowledge-Base/</link>
-    <guid>https://studere-alarcherche.github.io/Studere-Knowledge-Base/Studere-Knowledge-Base/</guid>
+    <link>https://studere-alarcherche.github.io/Studere-Knowledge-Base/</link>
+    <guid>https://studere-alarcherche.github.io/Studere-Knowledge-Base/</guid>
     <description><![CDATA[ 👁️ The Cognitive Architect “Transmute Information Noise into Structural Signal.” 将信息噪音转化为结构化信号。 欢迎来到我的认知实验室与数字花园。这里不囤积碎片，只生长具有拓扑结构的知识星系。一切概念均通过双向链接相互交织，自然涌现。 🌌 核心星系 (The Constellations) 这里是我正在进行逆向工程与深度解析的永续知识树。所有的 Bricks（概念恒星）与 Seeds（灵感星尘）最终都将汇聚于此。 OF PROUST 东海西海，心理攸同；南学北学，道术未裂。 普鲁斯特是世界的半径，追忆是勘测万物... ]]></description>
     <pubDate>Thu, 19 Feb 2026 11:56:54 GMT</pubDate>
   </item><item>
@@ -65,6 +59,12 @@
     <guid>https://studere-alarcherche.github.io/Studere-Knowledge-Base/Studere-Knowledge-Base/01_Maps/The-Bradbury-Quartet</guid>
     <description><![CDATA[  ]]></description>
     <pubDate>Thu, 19 Feb 2026 11:45:04 GMT</pubDate>
+  </item><item>
+    <title>00_LifeOS_War_Room</title>
+    <link>https://studere-alarcherche.github.io/Studere-Knowledge-Base/Studere-Knowledge-Base/00_LifeOS_War_Room</link>
+    <guid>https://studere-alarcherche.github.io/Studere-Knowledge-Base/Studere-Knowledge-Base/00_LifeOS_War_Room</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Thu, 19 Feb 2026 11:25:27 GMT</pubDate>
   </item>
     </channel>
   </rss>
