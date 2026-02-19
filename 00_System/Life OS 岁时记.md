@@ -1,3 +1,7 @@
+---
+title: 我的秘密研究
+draft: true
+---
 # 🧹 LifeOS 岁时记 (Maintenance Rituals)
 
 > **核心法则：** 系统不会自己保持整洁，必须定期“拂尘”。

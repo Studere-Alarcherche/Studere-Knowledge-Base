@@ -1,10 +1,11 @@
 ---
-type: "Seed"
-status: "open"
+type: Seed
+status: open
 created: "{{date}} {{time}}"
 tags:
-  - "type/seed"
-  - "status/waiting"
+  - type/seed
+  - status/waiting
+Draft: true
 ---
 
 ### 🌱 Engram: [Title of the Trace]

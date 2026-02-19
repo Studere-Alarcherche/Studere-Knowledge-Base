@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "91dbf01b17909f9d",
+        "id": "d9c3ecf85962be13",
         "type": "tabs",
         "children": [
           {
-            "id": "7163f62f0d87fd26",
+            "id": "5392e07731f0a877",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "99_Archive/📂 Legacy_Inbox/排版地图/🗺️ The Razor Design Matrix (排版战略地图).md",
+                "file": "00_LifeOS_War_Room.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -23,12 +23,12 @@
                   "sortOrder": "alphabetical",
                   "showSearch": false,
                   "searchQuery": "",
-                  "backlinkCollapsed": true,
+                  "backlinkCollapsed": false,
                   "unlinkedCollapsed": true
                 }
               },
               "icon": "lucide-file",
-              "title": "🗺️ The Razor Design Matrix (排版战略地图)"
+              "title": "00_LifeOS_War_Room"
             }
           }
         ]
@@ -181,8 +181,8 @@
             "state": {
               "type": "planner-timeline",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Timeline"
+              "icon": "lucide-ghost",
+              "title": "planner-timeline"
             }
           },
           {
@@ -191,12 +191,22 @@
             "state": {
               "type": "planner-timeline",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Timeline"
+              "icon": "lucide-ghost",
+              "title": "planner-timeline"
             }
           },
           {
             "id": "ae74cea750202443",
+            "type": "leaf",
+            "state": {
+              "type": "planner-timeline",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "planner-timeline"
+            }
+          },
+          {
+            "id": "277899542b3930d6",
             "type": "leaf",
             "state": {
               "type": "planner-timeline",
@@ -222,51 +232,51 @@
       "command-palette:開啟命令面板": false,
       "zk-prefixer:建立新唯一筆記": false,
       "templates:插入模板": false,
-      "obsidian-day-planner:Open Timeline": false,
-      "obsidian-day-planner:Open Multi-Day View": false,
       "random-note:開始漫遊筆記": false,
       "bases:建立新的 base": false,
-      "markdown-importer:開啟 Markdown 格式轉換器": false
+      "markdown-importer:開啟 Markdown 格式轉換器": false,
+      "obsidian-day-planner:Open Timeline": false,
+      "obsidian-day-planner:Open Multi-Day View": false
     }
   },
-  "active": "7163f62f0d87fd26",
+  "active": "5392e07731f0a877",
   "lastOpenFiles": [
-    "Critical Commentary.md",
-    "99_Archive/📂 Legacy_Inbox/排版地图/🗺️ The Razor Design Matrix (排版战略地图).md",
-    "99_Archive/100 Prompt Zone/普鲁斯特专用.md",
-    "The Collision 影响的谱系.md",
-    "99_Archive/📂 Legacy_Inbox/排版地图/公众号连载规划.md",
-    "99_Archive/100 Prompt Zone/🐱‍💻Cognitive Architect v10.1 (The Curator Edition).md",
-    "逆向工程建构--反推.md",
-    "布拉德雷四重奏.md",
-    "04_Journal/2026/1/2026-02-17.md",
-    "04_Journal/2026/1/2026-02-16.md",
-    "10_AL_HIKMAH/🧠 00_SLA/SYNTAX.BOOK 句法教材PROMPT.md",
-    "10_AL_HIKMAH/🧠 00_SLA/The Textbook Pipeline.md",
+    "00_LifeOS_War_Room.md",
+    "Asserts/Pasted image 20260219201554.png",
+    "01_Maps/Bricks/切片01-The Task of a Translator.md",
+    "01_Maps/Bricks/Character Sheet-The Player.md",
+    "01_Maps/Bricks/INTRO&P.md",
+    "01_Maps/Seeds/Strategic Seed Bank (灵感孵化器).md",
+    "index.md",
+    "Asserts/未命名.md",
+    "Asserts/Drafts-Marterials",
+    "LifeOS War Room.md",
+    "Asserts",
+    "01_Maps/The Bradbury Quartet.md",
+    "01_Maps/渐进式语言教材-英文.md",
+    "01_Maps/OF PROUST.md",
+    "99_Archive/Final/教材编写总论.md",
+    "99_Archive/Final/Intro.md",
+    "02_The_Forge/Cognitive Architect Dev.md",
+    "02_The_Forge",
+    "02_The_Forge/The Reduction Mask.md",
+    "01_Maps/未命名.md",
+    "01_Maps/未命名",
     "10_AL_HIKMAH/00_META_COMMAND/SLA_Axioms.md",
-    "10_AL_HIKMAH/11_ENGLISH/03_SYLLOGOS/01.md",
-    "99_Archive/📂 Legacy_Inbox/排版地图/The Structural Clarity：PROUST.md",
-    "99_Archive/100 Prompt Zone/🧬LifeOS Kernel v2.2.Omni-Architect.md",
-    "02_Bricks/负向阅读 (Negative Reading) 的理论图谱.md",
-    "02_Bricks/Character Sheet-The Player.md",
-    "02_Bricks/负向阅读的适用边界与核心动力.md",
-    "未命名 1.md",
-    "99_Archive/Final/MVP1.0.md",
-    "04_Journal/2026/1/2026-02-15.md",
-    "04_Journal/2026/1/2026-02-13.md",
-    "未命名 3.md",
-    "未命名 2.md",
-    "01_Maps/000_Life_Strategy.md",
+    "00_System/🧠 00_SLA/The Textbook Pipeline.md",
+    "00_System/🧠 00_SLA/SYNTAX.BOOK 句法教材PROMPT.md",
+    "01_Maps/Active_Projects/实战演练_Mnemosyne.md",
+    "01_Maps/DRAFTS.md",
+    "01_Maps/Cathedral/OF PROUST/The Collision 影响的谱系.md",
+    "01_Maps/Cathedral/OF PROUST/Critical Commentary.md",
+    "00_System/North Star Terminal.md",
+    "00_System/Life OS 岁时记.md",
+    "01_Maps/Cathedral/OF PROUST",
+    "04_Journal/2026/2",
+    "index",
     "prompts-PROUST.json",
     "99_Archive/📂 Legacy_Inbox/排版地图",
     "10_AL_HIKMAH/11_ENGLISH/03_SYLLOGOS/🔴 Stage_3_Full",
-    "10_AL_HIKMAH/11_ENGLISH/03_SYLLOGOS/🟡 Stage_2_Logic",
-    "10_AL_HIKMAH/11_ENGLISH/03_SYLLOGOS/🟢 Stage_1_Syntax",
-    "10_AL_HIKMAH/12_FRENCH/Materials",
-    "10_AL_HIKMAH/11_ENGLISH/NOTES",
-    "10_AL_HIKMAH/12_FRENCH/03_Output",
-    "10_AL_HIKMAH/12_FRENCH/Notes",
-    "10_AL_HIKMAH/12_FRENCH/01_Lab",
     "Pasted image 20260129012044.png",
     "Pasted image 20260128231617.png",
     "Pasted image 20260128231609.png",
